@@ -16,14 +16,14 @@ ThemeData theme() {
 }
 
 AppBarTheme appBarTheme () {
-  return AppBarTheme(
+  return const AppBarTheme(
     color: Colors.white,
     elevation: 0,
     centerTitle: true,
-    iconTheme: const IconThemeData(
+    iconTheme: IconThemeData(
       color: Colors.black,
     ),
-    titleTextStyle: const TextStyle(
+    titleTextStyle: TextStyle(
       color: Colors.black,
       fontSize: 18,
       fontWeight: FontWeight.bold,

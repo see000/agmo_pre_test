@@ -1,13 +1,10 @@
 
-import 'package:agmo_pre_test/data/sample_data.dart';
 import 'package:agmo_pre_test/provider/event_list_provider.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../modals/event.dart';
 import '../widgets/event_list_tile.dart';
-import '../widgets/event_tile.dart';
 
 class EventViewerScreen extends StatelessWidget {
   final TextEditingController searchBarTextEditController = TextEditingController();
@@ -26,7 +23,7 @@ class EventViewerScreen extends StatelessWidget {
         appBar: _buildEventViewerAppBar(),
         backgroundColor: Colors.orange, 
         body: Stack(
-
+    
           children: [
              Positioned(
             top: height * 0.1,
@@ -42,7 +39,7 @@ class EventViewerScreen extends StatelessWidget {
             right: 0,
             bottom: 0,
             left: 0,
-            child: ColoredBox(color :Color.fromARGB(255, 142, 209, 233)),
+            child:const ColoredBox(color : Color(0xFFA2CCFD)),
           ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: width * 0.05),
@@ -57,7 +54,7 @@ class EventViewerScreen extends StatelessWidget {
                   }
                   ),
                   const SizedBox(height: 20,),
-                  const EventListTile()
+                  const EventListTile(),
                 ],
                  
               ),
@@ -87,19 +84,26 @@ AppBar _buildEventViewerAppBar() {
   );
 }
 
-SearchBar _buildSearchBar(TextEditingController controller, {ValueChanged<String>? onChanged}) {
-  return SearchBar(
-    controller: controller,
-    hintText: 'Search activities & events',
-    shape: MaterialStatePropertyAll(RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
-    backgroundColor: MaterialStateProperty.all(Colors.white),
-    surfaceTintColor: MaterialStateProperty.all(Colors.white),
-    trailing:  const [Icon(Icons.search)],
-    onChanged: onChanged,
-    onTap: null,
-    
-  );
+
+Widget _buildSearchBar(TextEditingController controller,{ValueChanged<String>? onChanged}) {
+  return TextField(
+      controller: controller,
+      onChanged: onChanged,
+      decoration: InputDecoration(
+        hintText: 'Search activities & events',
+        filled: true,
+        fillColor: Colors.white,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        suffixIcon: const Icon(Icons.search), // You can customize this based on your needs
+      ),
+      
+    );
 }
+
+
+
 
 
 

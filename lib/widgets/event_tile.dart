@@ -15,7 +15,7 @@ class EventTile extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: const BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(10)),
       ),
       child: Row(
         children: [
@@ -57,7 +57,8 @@ Widget _buildEventDetails(eventModel) {
         Text(
           eventModel.eventDate,
           style: const TextStyle(
-            fontSize: 14,
+            fontSize: 12,
+            color: Colors.grey,
           ),
         ),
         const SizedBox(
@@ -73,14 +74,14 @@ Widget _buildEventDetails(eventModel) {
         const SizedBox(
           height: 5,
         ),
-        InfoLabel(
+        infoLabel(
           label: eventModel.eventLocation,
           infoLabelIcon: const Icon(Icons.location_on_sharp,color: Colors.grey,),
         ),
         const SizedBox(
           height: 5,
         ),
-        InfoLabel(
+        infoLabel(
           label: eventModel.numberOfSlots,
           infoLabelIcon: const Icon(Icons.person, color: Colors.grey),
         ),

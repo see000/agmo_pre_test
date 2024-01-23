@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget InfoLabel({required String label, required Icon infoLabelIcon}){
+Widget infoLabel({required String label, required Icon infoLabelIcon}){
   return Row(
     children: [
       Expanded(
